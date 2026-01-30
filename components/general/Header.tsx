@@ -33,13 +33,13 @@ const Header = ({ bgColor = "bg-blue-950" }) => {
                 Let's Connect
             </Button>
 
-            <Button className='block sm:hidden' onClick={() => setMenuOpen(!menuOpen)}>
+            <Button className='block sm:hidden' onClick={() => setMenuOpen(true)}>
                 <MenuIcon size={24} />
             </Button>
 
             {menuOpen && (
-                <div className="">
-                    <div className="fixed inset-0 bg-black/70 z-40" onClick={() => setMenuOpen(false)}></div>
+                <div className="block sm:hidden">
+                    <div className="fixed inset-0 bg-black/50 z-40" onClick={() => setMenuOpen(false)}></div>
                     <div className="fixed min-h-screen h-full top-0 right-0 bg-blue-950 dark:bg-black rounded-md shadow-lg w-[50%] z-50">
                         
                         <Button className='absolute top-6 right-6 group' onClick={() => setMenuOpen(false)}><Cross size={24} className='rotate-45 group-hover:rotate-180 transition-all duration-500' /></Button>
@@ -47,12 +47,12 @@ const Header = ({ bgColor = "bg-blue-950" }) => {
                         <ul className="flex flex-col mt-16">
                             {navItems.map((item) => (
                                 <li key={item.name}>
-                                    <Link href={item.href} className={`block hover:text-white font-semibold text-base transition-colors p-6 ${pathname === item.href ? 'text-white' : 'text-white/50'}`} onClick={() => setMenuOpen(false)}>{item.name}</Link>
+                                    <Link href={item.href} className={`block hover:text-white font-semibold text-base transition-colors p-6 ${pathname === item.href ? 'text-white' : 'text-white/70'}`} onClick={() => setMenuOpen(false)}>{item.name}</Link>
                                 </li>
                             ))}
                         </ul>
 
-                        <Button className='w-full absolute bottom-0 left-0'>Let's Connect</Button>
+                        <Button className='w-full absolute bottom-0 left-0' onClick={() => setMenuOpen(false)}>Let's Connect</Button>
                     </div>
                 </div>
             )}
