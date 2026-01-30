@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import Header from "@/components/general/Header";
 import Footer from "@/components/general/Footer";
+import HeaderCondition from "@/components/general/HeaderCondition";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Code With Jeremiah",
   description: "A learning platform about web development, programming, and technology.",
+  icons: {
+    icon: "/keyboard.png",
+  },
 };
 
 export default function RootLayout({
@@ -27,9 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased m-0 p-0 bg-blue-950 text-white`}
       >
-        <Header />
+        <HeaderCondition />
         {children}
         <Footer />
       </body>

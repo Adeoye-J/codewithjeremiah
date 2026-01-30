@@ -2,17 +2,17 @@ import React from 'react'
 
 const Button = ({ variant = "primary", size = "medium", children, className = "", ...props } : { variant?: string, size?: string, children: React.ReactNode, className?: string }) => {
   
-    const baseClasses = "px-6 py-4 border-2 border-white hover:bg-white hover:text-blue-800 transition-colors duration-500 cursor-pointer";
+    const baseClasses = "px-3 py-4 lg:px-6 lg:py-4 border-2 hover:bg-white hover:text-blue-950 transition-colors duration-500 cursor-pointer";
     
     const variantClasses : Record<string, string> = {
-        primary: "bg-transparent text-white",
-        // secondary: "bg-transparent",
+        primary: "bg-transparent text-white border-white",
+        secondary: "bg-blue-950 text-white border-blue-950 hover:border-white",
     }
 
     const sizeClasses : Record<string, string> = {
-        small: "text-sm",
-        medium: "text-base font-semibold",
-        large: "text-lg",
+        small: "text-xs sm:text-sm font-medium",
+        medium: "text-xs md:text-sm lg:text-base font-semibold",
+        large: "text-sm md:text-base lg:text-lg font-bold",
     }
 
     return (
