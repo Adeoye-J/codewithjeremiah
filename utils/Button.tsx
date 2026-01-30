@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Button = ({ variant = "primary", size = "medium", children, className = "", ...props } : { variant?: string, size?: string, children: React.ReactNode, className?: string }) => {
+const Button = ({ variant = "primary", size = "medium", children, className = "", onClick, ...props } : { variant?: string, size?: string, children: React.ReactNode, className?: string, onClick?: () => void }) => {
   
     const baseClasses = "px-3 py-4 lg:px-6 lg:py-4 border-2 hover:bg-white hover:text-blue-950 transition-colors duration-500 cursor-pointer";
     
@@ -16,7 +16,7 @@ const Button = ({ variant = "primary", size = "medium", children, className = ""
     }
 
     return (
-        <button className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`} {...props}>
+        <button onClick={onClick} className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`} {...props}>
             {children}
         </button>
     )
