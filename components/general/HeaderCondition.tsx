@@ -3,7 +3,7 @@
 import React from 'react'
 import { usePathname } from 'next/navigation'
 import Header from './Header';
-import Hero from './Hero';
+import Hero from '../landing/Hero';
 
 const HeaderCondition = () => {
 

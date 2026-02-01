@@ -5,8 +5,8 @@ const Button = ({ variant = "primary", size = "medium", children, className = ""
     const baseClasses = "px-3 py-4 lg:px-6 lg:py-4 border-2 hover:bg-white hover:text-blue-950 transition-colors duration-500 cursor-pointer";
     
     const variantClasses : Record<string, string> = {
-        primary: "bg-transparent text-white border-white",
-        secondary: "bg-blue-950 text-white border-blue-950 hover:border-white",
+        primary: "bg-transparent text-white border-white hover:border-blue-950",
+        secondary: "bg-blue-950 text-white border-blue-950 hover:border-blue-950",
     }
 
     const sizeClasses : Record<string, string> = {
