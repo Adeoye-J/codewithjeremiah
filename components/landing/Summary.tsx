@@ -3,7 +3,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import Button from '@/utils/Button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, ArrowRightIcon, ChevronRight } from 'lucide-react';
+import { Shuffle, ChevronRight } from 'lucide-react';
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -60,24 +60,34 @@ const Summary = () => {
 
             <div className="flex flex-col md:flex-row gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {summaryItems.map((item, index) => (
-                    <div className="flex flex-col justify-between bg-white dark:bg-black rounded-lg shadow-md overflow-hidden" key={index}>
-                        {/* Content */}
-                        <div className="p-4 flex flex-col justify-between flex-1">
-                            <div className="space-y-4">
-                                <h4 className="text-xs dark:text-white font-semibold">{item.section}</h4>
-                                <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>{item.title}</h3>
-                                <p className="text-gray-600 dark:text-gray-300 italic">{item.description}</p>
+                    <>
+                        <div className="flex flex-col justify-between bg-white dark:bg-black rounded-lg shadow-md overflow-hidden" key={index}>
+                            {/* Content */}
+                            <div className="p-4 flex flex-col justify-between flex-1">
+                                <div className="space-y-4">
+                                    <h4 className="text-xs dark:text-white font-semibold">{item.section}</h4>
+                                    <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>{item.title}</h3>
+                                    <p className="text-gray-600 dark:text-gray-300 italic">{item.description}</p>
+                                </div>
+                                <Link href={item.link} className="mt-4 text-blue-600 dark:text-blue-400 flex items-center gap-1 font-medium group text-sm">
+                                    {item.action} <span className="group-hover:translate-x-1 transition-transform"><ChevronRight width={16} height={16} /></span>
+                                </Link>
                             </div>
-                            <Link href={item.link} className="mt-4 text-blue-600 dark:text-blue-400 flex items-center gap-1 font-medium group text-sm">
-                                {item.action} <span className="group-hover:translate-x-1 transition-transform"><ChevronRight width={16} height={16} /></span>
-                            </Link>
+
+                            {/* Image */}
+                            <div className="">
+                                <Image src={item.image} alt={item.section} width={600} height={400} className="" />
+                            </div>
                         </div>
 
-                        {/* Image */}
                         <div className="">
-                            <Image src={item.image} alt={item.section} width={600} height={400} className="" />
+                            {index < summaryItems.length - 1 && (
+                                <div className="flex md:hidden items-center justify-center h-full">
+                                    <Shuffle size={28} className="text-gray-400 rotate-90" />
+                                </div>
+                            )}
                         </div>
-                    </div>
+                    </>
                 ))}
             </div>
 
