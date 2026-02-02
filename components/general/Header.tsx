@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 import { navItems } from '@/lib/navItems'
 import { Cross, Menu, MenuIcon, MenuSquare, MenuSquareIcon } from 'lucide-react'
 
-const Header = ({ bgColor = "bg-blue-950" }) => {
+const Header = ({ bgColor = "bg-blue-950 dark:bg-black" }) => {
 
     const pathname = usePathname();
     const [menuOpen, setMenuOpen] = useState(false);

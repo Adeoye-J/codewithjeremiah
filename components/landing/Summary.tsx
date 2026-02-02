@@ -46,29 +46,7 @@ const Summary = () => {
     ];
 
     return (
-        <div className="bg-gray-100 py-12 md:py-20 dark:bg-gray-900">
-            {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                {summaryItems.map((item, index) => (
-                    <div 
-                        key={index} 
-                        className={`flex flex-col md:flex-row items-center my-8 md:my-12 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
-                    >
-                        <div className="w-full md:w-1/2">
-                            <img
-                                src={item.image}
-                                alt={item.section}
-                                className="w-full h-64 object-cover rounded-lg shadow-md"
-                            />
-                        </div>
-                        <div className="w-full md:w-1/2 md:pl-12 md:pr-12 mt-6 md:mt-0 text-center md:text-left">
-                            <h4 className="text-sm dark:text-white font-semibold mb-2">{item.section}</h4>
-                            <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold mb-4 dark:text-white`}>{item.title}</h3>
-                            <p className="text-gray-600 mb-6 dark:text-gray-300 italic">{item.description}</p>
-                            <Button variant='secondary' >{item.action}</Button>
-                        </div>
-                    </div>
-                ))}
-            </div> */}
+        <div className="py-12 md:py-20 bg-gray-100 dark:bg-black">
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2 mb-12">
                 <h3 className='font-semibold text-xs dark:text-white'>Everything</h3>
@@ -80,11 +58,11 @@ const Summary = () => {
                 </p>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="flex flex-col md:flex-row gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 {summaryItems.map((item, index) => (
-                    <div className="flex flex-col justify-between bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden" key={index}>
+                    <div className="flex flex-col justify-between bg-white dark:bg-black rounded-lg shadow-md overflow-hidden" key={index}>
                         {/* Content */}
-                        <div className="p-4 md:p-6 flex flex-col justify-between flex-1">
+                        <div className="p-4 flex flex-col justify-between flex-1">
                             <div className="space-y-4">
                                 <h4 className="text-xs dark:text-white font-semibold">{item.section}</h4>
                                 <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>{item.title}</h3>

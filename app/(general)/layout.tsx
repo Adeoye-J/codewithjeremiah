@@ -41,7 +41,7 @@ export default function RootLayout({
       <body
         className={`
             ${inter.variable} 
-            antialiased m-0 p-0 bg-blue-950 text-white`
+            antialiased m-0 p-0 text-white`
         }
       >
         <HeaderCondition />

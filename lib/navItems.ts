@@ -1,5 +1,10 @@
 
-export const navItems = [
+type NavItem = {
+    name: string;
+    href: string;
+};
+
+export const navItems : NavItem[] = [
     { name: "Blog", href: "/blog" },
     { name: "Projects", href: "/projects" },
     { name: "Courses", href: "/courses" },
