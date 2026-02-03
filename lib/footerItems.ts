@@ -20,10 +20,10 @@ export const footerItems : FooterItem[][] = [
         { name: "Contact", href: "/contact" }
     ],
     [
-        { name: "Facebook", href: "https://facebook.com" },
-        { name: "Twitter", href: "https://twitter.com" },
         { name: "LinkedIn", href: "https://linkedin.com" },
         { name: "GitHub", href: "https://github.com" },
+        { name: "Facebook", href: "https://facebook.com" },
+        { name: "Twitter", href: "https://twitter.com" },
         { name: "Instagram", href: "https://instagram.com" }
     ],
     [

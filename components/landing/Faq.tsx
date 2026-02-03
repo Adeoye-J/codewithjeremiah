@@ -42,13 +42,13 @@ const Faq = () => {
     ]
 
     return (
-        <div className="bg-gray-100 dark:bg-black">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-gray-100 dark:bg-black px-6 md:px-12 lg:px-20 ">
+            <div className="max-w-7xl mx-auto">
                 <h2 className={`${spaceGrotesk.className} text-3xl font-bold text-center dark:text-white`}>Frequently Asked Questions</h2>
                 <p className="text-center text-gray-600 dark:text-gray-300 mt-4">Common questions about the platform, courses and how to get most from it.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto mt-10">
                 {faqItems.map((item, index) => (
                     <div className="flex flex-col items-center text-center space-y-4 rounded-lg shadow-md p-6 md:p-8 mx-auto text-black dark:text-white" key={index}>
                         <span className='text-blue-600 dark:text-blue-400'>{item.icon}</span>
@@ -58,7 +58,7 @@ const Faq = () => {
                 ))}
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="max-w-7xl mx-auto py-8">
                 <div className="text-center">
                     <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>Have more questions?</h3>
                     <p className="text-gray-600 dark:text-gray-300 mt-2">Reach out directly. I read every message.</p>

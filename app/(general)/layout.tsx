@@ -7,6 +7,8 @@ import {
 import "../globals.css";
 import Footer from "@/components/general/Footer";
 import HeaderCondition from "@/components/general/HeaderCondition";
+import Header from "@/components/general/Header";
+import Hero from "@/components/general/Hero";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",
@@ -41,10 +43,10 @@ export default function RootLayout({
       <body
         className={`
             ${inter.variable} 
-            antialiased m-0 p-0 text-white`
+            antialiased m-0 p-0 min-h-screen flex flex-col justify-between`
         }
       >
-        <HeaderCondition />
+        {/* <HeaderCondition /> */}
         {children}
         <Footer />
       </body>

@@ -1,11 +1,10 @@
 import React from 'react'
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import Button from '@/utils/Button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Shuffle, ChevronRight } from 'lucide-react';
 
-const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const Summary = () => {
@@ -46,9 +45,9 @@ const Summary = () => {
     ];
 
     return (
-        <div className="py-12 md:py-20 bg-gray-100 dark:bg-black">
+        <div className="py-12 md:py-20 bg-gray-100 dark:bg-black px-6 md:px-12 lg:px-20 ">
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2 mb-12">
+            <div className="max-w-7xl mx-auto text-center space-y-2 mb-12">
                 <h3 className='font-semibold text-xs dark:text-white'>Everything</h3>
                 <h2 className={`${spaceGrotesk.className} text-xl md:text-2xl lg:text-4xl font-extrabold dark:text-white`}>
                     What you get here
@@ -58,10 +57,10 @@ const Summary = () => {
                 </p>
             </div>
 
-            <div className="flex flex-col md:flex-row gap-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="flex flex-col md:flex-row gap-3 max-w-7xl mx-auto py-8">
                 {summaryItems.map((item, index) => (
-                    <>
-                        <div className="flex flex-col justify-between bg-white dark:bg-black rounded-lg shadow-md overflow-hidden" key={index}>
+                    <div key={index} className="flex flex-col md:flex-1">
+                        <div className="flex flex-col flex-1 justify-between bg-white dark:bg-black rounded-lg shadow-xl overflow-hidden group">
                             {/* Content */}
                             <div className="p-4 flex flex-col justify-between flex-1">
                                 <div className="space-y-4">
@@ -69,29 +68,29 @@ const Summary = () => {
                                     <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>{item.title}</h3>
                                     <p className="text-gray-600 dark:text-gray-300 italic">{item.description}</p>
                                 </div>
-                                <Link href={item.link} className="mt-4 text-blue-600 dark:text-blue-400 flex items-center gap-1 font-medium group text-sm">
-                                    {item.action} <span className="group-hover:translate-x-1 transition-transform"><ChevronRight width={16} height={16} /></span>
+                                <Link href={item.link} className="mt-4 text-blue-600 dark:text-blue-400 flex items-center gap-1 font-medium group text-sm self-start">
+                                    {item.action} <span className=" transition-transform"><ChevronRight width={16} height={16} /></span>
                                 </Link>
                             </div>
 
                             {/* Image */}
-                            <div className="">
-                                <Image src={item.image} alt={item.section} width={600} height={400} className="" />
+                            <div className="overflow-hidden">
+                                <Image src={item.image} alt={item.section} width={600} height={400} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                             </div>
                         </div>
 
-                        <div className="">
+                        <>
                             {index < summaryItems.length - 1 && (
                                 <div className="flex md:hidden items-center justify-center h-full">
                                     <Shuffle size={28} className="text-gray-400 rotate-90" />
                                 </div>
                             )}
-                        </div>
-                    </>
+                        </>
+                    </div>
                 ))}
             </div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+            <div className="max-w-7xl mx-auto pt-8">
                 <div className="text-center">
                     <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>Ready to get started?</h3>
                     <p className="text-gray-600 dark:text-gray-300 mt-2">Join me on this journey of learning and building.</p>
