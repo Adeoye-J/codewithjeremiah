@@ -34,7 +34,7 @@ const ProjectCard = ({ bgImage }: { bgImage?: string }) => {
                     </div>
                 </div>
                 
-                <h3 className={`${spaceGrotesk.className} text-white font-bold text-xl p-4 border bg-blue-950 inline-block absolute -top-8 transform translate-x-1/2`}>Project Title</h3>
+                <h3 className={`${spaceGrotesk.className} text-white font-bold text-xl p-4 border bg-blue-950 inline-block absolute -top-8 transform translate-x-1/2 group-hover:hidden`}>Project Title</h3>
             </div>
         </div>
     )
