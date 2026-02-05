@@ -7,8 +7,9 @@ const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const Hero = ({title, subtitle, action1, action2, bgImage, heightClass} : {title?: string, subtitle?: string, action1?: string, action2?: string, bgImage?: string, heightClass?: string}) => {
+    const imageUrl = `/images/${bgImage || 'hero-bg-1.jpg'}`
     return (
-        <div className={`px-6 md:px-12 lg:px-20  bg-cover bg-center bg-[url('/images/${bgImage || 'hero-bg-1.jpg'}')] bg-no-repeat bg-black/70 dark:bg-black/85 bg-blend-overlay`}>
+        <div className={`px-6 md:px-12 lg:px-20 bg-cover bg-center bg-no-repeat bg-black/70 dark:bg-black/85 bg-blend-overlay`} style={{ backgroundImage: `url(${imageUrl})` }}>
             <div className="mx-auto max-w-7xl flex flex-col items-center">
                 <div className="w-full">
                     <Header bgColor="bg-transparent dark:bg-transparent" />

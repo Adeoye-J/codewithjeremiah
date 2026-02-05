@@ -38,10 +38,10 @@ body {
 
 /* Post-Implementation Styles */
 
-img {
+/* img {
   max-width: 100%;
   height: auto;
-}
+} */
 
 ::-webkit-scrollbar {
   width: 8px;

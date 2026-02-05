@@ -65,7 +65,9 @@ const Summary = () => {
                             <div className="p-4 flex flex-col justify-between flex-1">
                                 <div className="space-y-4">
                                     <h4 className="text-xs dark:text-white font-semibold">{item.section}</h4>
-                                    <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>{item.title}</h3>
+                                    <Link href={item.link} className="inline-block">
+                                        <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300`}>{item.title}</h3>
+                                    </Link>
                                     <p className="text-gray-600 dark:text-gray-300 italic">{item.description}</p>
                                 </div>
                                 <Link href={item.link} className="mt-4 text-blue-600 dark:text-blue-400 flex items-center gap-1 font-medium group text-sm self-start">

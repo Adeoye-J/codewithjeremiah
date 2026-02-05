@@ -1,6 +1,6 @@
 
-import Sidebar from "@/components/projects/Sidebar"
-import Topbar from "@/components/projects/Topbar";
+import Sidebar from "@/components/user-dashboard/Sidebar"
+import Topbar from "@/components/user-dashboard/Topbar";
 
 import type { Metadata } from "next";
 import { 
