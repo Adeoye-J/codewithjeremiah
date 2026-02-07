@@ -1,5 +1,5 @@
 import Button from '@/utils/Button';
-import { GithubIcon } from 'lucide-react'
+import { GithubIcon, WholeWord } from 'lucide-react'
 import { Space_Grotesk } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -8,18 +8,14 @@ const ProjectCard = ({ bgImage, primaryColor, title, description, stack }: { bgI
     const imageUrl = `/images/${bgImage || 'hero-bg-1.jpg'}`
 
     return (
-        <div className=''>
-            <div className="">
                 <div
-                    className="w-75 h-75 md:w-85 md:h-85 rounded-lg group bg-blue-600/10 bg-cover bg-center bg-no-repeat bg-blend-overlay relative rounded-l-[30px] overflow-hidden"
+                    className="w-full h-75 md:w-full md:h-85 rounded-lg group bg-blue-600/10 bg-cover bg-center bg-no-repeat bg-blend-overlay relative rounded-l-[30px] overflow-hidden"
                     style={{ backgroundImage: `url(${imageUrl})`, boxShadow: `0 4px 15px ${primaryColor}40` }}
                 >
-                    <div className="absolute top-0 left-0 w-12.5 h-full rounded-r-[30px] bg-blue-950 opacity-0 group-hover:opacity-100 block transition-all duration-500 z-20">
+                    <div className="absolute top-0 left-0 w-12.5 h-full rounded-r-[30px] bg-blue-950/50 opacity-0 group-hover:opacity-100 block transition-all duration-500 z-20">
                         <div className="flex flex-col items-center justify-center h-full">
                             <GithubIcon className="text-white hover:text-blue-950 m-4" size={28} />
-                            <GithubIcon className="text-white hover:text-blue-950 m-4" size={28} />
-                            <GithubIcon className="text-white hover:text-blue-950 m-4" size={28} />
-                            <GithubIcon className="text-white hover:text-blue-950 m-4" size={28} />
+                            <WholeWord className="text-white hover:text-blue-950 m-4" size={28} />
                         </div>
                     </div>
 
@@ -34,8 +30,6 @@ const ProjectCard = ({ bgImage, primaryColor, title, description, stack }: { bgI
 
                     <h3 className={`${spaceGrotesk.className} text-white font-bold text-sm px-4 py-2 border inline-block rounded-lg absolute bottom-0 right-0 opacity-100 group-hover:opacity-0 transition-all duration-500`} style={{borderColor: `${primaryColor}`, backgroundColor: `${primaryColor}`}}>{title}</h3>
                 </div>
-            </div>
-        </div>
     )
 }
 
