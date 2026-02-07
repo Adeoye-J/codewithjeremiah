@@ -1,5 +1,5 @@
 
-type FooterItem = {
+interface FooterItem {
     name: string;
     href: string;
 };

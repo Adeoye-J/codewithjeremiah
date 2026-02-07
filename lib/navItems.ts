@@ -1,5 +1,5 @@
 
-type NavItem = {
+interface NavItem {
     name: string;
     href: string;
 };

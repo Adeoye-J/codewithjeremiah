@@ -4,17 +4,17 @@ import { Space_Grotesk } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
-const ProjectCard = ({ bgImage }: { bgImage?: string }) => {
+const ProjectCard = ({ bgImage, primaryColor, title, description, stack }: { bgImage?: string, primaryColor?: string, title?: string, description?: string, stack?: string[] }) => {
     const imageUrl = `/images/${bgImage || 'hero-bg-1.jpg'}`
 
     return (
-        <div className='m-12'>
-            <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-lg group">
+        <div className=''>
+            <div className="">
                 <div
-                    className="w-full h-full bg-blue-600/10 bg-cover bg-center bg-no-repeat bg-blend-overlay relative rounded-l-[30px] overflow-hidden"
-                    style={{ backgroundImage: `url(${imageUrl})` }}
+                    className="w-75 h-75 md:w-85 md:h-85 rounded-lg group bg-blue-600/10 bg-cover bg-center bg-no-repeat bg-blend-overlay relative rounded-l-[30px] overflow-hidden"
+                    style={{ backgroundImage: `url(${imageUrl})`, boxShadow: `0 4px 15px ${primaryColor}40` }}
                 >
-                    <div className="absolute top-0 left-0 w-[50px] h-full rounded-r-[30px] bg-black hidden group-hover:block transition-all duration-500 z-20">
+                    <div className="absolute top-0 left-0 w-12.5 h-full rounded-r-[30px] bg-blue-950 opacity-0 group-hover:opacity-100 block transition-all duration-500 z-20">
                         <div className="flex flex-col items-center justify-center h-full">
                             <GithubIcon className="text-white hover:text-blue-950 m-4" size={28} />
                             <GithubIcon className="text-white hover:text-blue-950 m-4" size={28} />
@@ -23,18 +23,17 @@ const ProjectCard = ({ bgImage }: { bgImage?: string }) => {
                         </div>
                     </div>
 
-                </div>
-
-                <div className="w-full h-full absolute top-0 left-[24px] right-0 bottom-0 bg-blue-950 hidden group-hover:flex transition-opacity duration-500 items-center justify-center">
-                    <div className="p-4 text-white ml-[30px] mr-[20px] space-y-5 my-4">
-                        <h3 className={`${spaceGrotesk.className} text-white font-bold text-xl`}>Project Title</h3>
-                        <p className={`${spaceGrotesk.className} mb-2`}>A brief description of the project goes here. It highlights the main features and technologies used.</p>
-                        <p className={`${spaceGrotesk.className} text-sm text-gray-300`}>Tech Stack: React, Next.js, Tailwind CSS</p>
-                        <Button size='small'>View Details</Button>
+                    <div className={`w-full h-full absolute top-0 left-0 right-0 bottom-0 rounded-l-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center`} style={{backgroundColor: `${primaryColor}`}}>
+                        <div className="p-4 text-white ml-[15%] mr-8 space-y-5 my-4 overflow-auto max-h-[90%]">
+                            <h3 className={`${spaceGrotesk.className} text-white font-bold text-xl`}>{title}</h3>
+                            <p className={`${spaceGrotesk.className} mb-2`}>{description}</p>
+                            <p className={`${spaceGrotesk.className} text-sm text-gray-300`}>Tech Stack: {stack?.join(', ')}</p>
+                            <Button size='small'>View Details</Button>
+                        </div>
                     </div>
+
+                    <h3 className={`${spaceGrotesk.className} text-white font-bold text-sm px-4 py-2 border inline-block rounded-lg absolute bottom-0 right-0 opacity-100 group-hover:opacity-0 transition-all duration-500`} style={{borderColor: `${primaryColor}`, backgroundColor: `${primaryColor}`}}>{title}</h3>
                 </div>
-                
-                <h3 className={`${spaceGrotesk.className} text-white font-bold text-xl p-4 border bg-blue-950 inline-block absolute -top-8 transform translate-x-1/2 group-hover:hidden`}>Project Title</h3>
             </div>
         </div>
     )
