@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import ProjectCard from './ProjectCard'
-import { Project } from '@/types/projects';
+import { Project } from '@/types/project';
 import ProjectFilters from './ProjectsFilter';
 
 const ProjectList = ({projects} : { projects: Project[] }) => {

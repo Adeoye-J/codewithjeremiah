@@ -2,7 +2,7 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import { Space_Grotesk } from "next/font/google";
-import { Project } from "@/types/projects";
+import { Project } from "@/types/project";
 import { useEffect } from "react";
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });

@@ -1,11 +1,14 @@
 import Button from '@/utils/Button';
 import { GithubIcon, WholeWord } from 'lucide-react'
 import { Space_Grotesk } from 'next/font/google'
+import Link from 'next/link';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const ProjectCard = ({ bgImage, primaryColor, title, description, stack }: { bgImage?: string, primaryColor?: string, title?: string, description?: string, stack?: string[] }) => {
     const imageUrl = `/images/${bgImage || 'hero-bg-1.jpg'}`
+
+    const navRoute = title?.replace(" ", "-").toLowerCase()
 
     return (
                 <div
@@ -24,7 +27,8 @@ const ProjectCard = ({ bgImage, primaryColor, title, description, stack }: { bgI
                             <h3 className={`${spaceGrotesk.className} text-white font-bold text-xl`}>{title}</h3>
                             <p className={`${spaceGrotesk.className} mb-2`}>{description}</p>
                             <p className={`${spaceGrotesk.className} text-sm text-gray-300`}>Tech Stack: {stack?.join(', ')}</p>
-                            <Button size='small'>View Details</Button>
+                            {/* <Button size='small'>View Details</Button> */}
+                            <Link href={`/projects/${navRoute}`} className='px-3 py-4 lg:px-6 lg:py-4 border-2 hover:bg-white hover:text-blue-950 transition-colors duration-500 cursor-pointer text-xs sm:text-sm font-medium bg-transparent text-white border-white hover:border-blue-950'>View Details</Link>
                         </div>
                     </div>
 

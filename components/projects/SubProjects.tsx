@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectList from './ProjectList'
-import { projects } from '@/lib/projects'
+import { projects } from '@/data/projects'
 import { Space_Grotesk } from 'next/font/google'
 import Button from '@/utils/Button';
 

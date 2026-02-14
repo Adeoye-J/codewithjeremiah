@@ -1,5 +1,5 @@
 import React from 'react'
-import { footerItems } from '@/lib/footerItems'
+import { footerItems } from '@/data/footerItems'
 import Image from 'next/image'
 
 const Footer = () => {

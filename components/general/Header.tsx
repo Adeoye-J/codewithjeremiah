@@ -5,7 +5,7 @@ import Button from '@/utils/Button'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { navItems } from '@/lib/navItems'
+import { navItems } from '@/data/navItems'
 import { Cross, MenuIcon } from 'lucide-react'
 
 const Header = ({ bgColor = "bg-blue-950 dark:bg-black", otherStyles= "" } : {bgColor?: string, otherStyles?: string}) => {
