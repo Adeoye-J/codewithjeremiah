@@ -30,7 +30,7 @@ const Header = ({ bgColor = "bg-blue-950 dark:bg-black", otherStyles= "" } : {bg
                     </ul>
                 </nav>
 
-                <Button className='tracking-wider hidden sm:block'>
+                <Button href={"/sign-in"} className='tracking-wider hidden sm:block'>
                     Sign in
                 </Button>
 
@@ -53,7 +53,7 @@ const Header = ({ bgColor = "bg-blue-950 dark:bg-black", otherStyles= "" } : {bg
                                 ))}
                             </ul>
 
-                            <Button className='w-full absolute bottom-0 left-0' onClick={() => setMenuOpen(false)}>Sign in</Button>
+                            <Button className='w-full' onClick={() => setMenuOpen(false)}>Sign in</Button>
                         </div>
                     </div>
                 )}

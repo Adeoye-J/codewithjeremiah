@@ -6,7 +6,12 @@ const ProjectsPage = () => {
 
     return (
         <div className='min-h-screen'>
-            <Hero title='My Projects' subtitle='A showcase of my work and accomplishments.' action1='View All Projects' action2='Contact Me' bgImage='hero-bg.jpg' />
+            <Hero 
+                title='My Projects' 
+                subtitle='A showcase of my work and accomplishments.' 
+                action={[{"title": "View All Projects", "location": "/projects"}, {"title": "Contact Me", "location": "/contact"}]} 
+                bgImage='hero-bg.jpg' 
+            />
             <SubProjects />
         </div>
     )

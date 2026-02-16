@@ -3,29 +3,29 @@
 import { useParams } from 'next/navigation'
 import Header from '@/components/general/Header'
 import { projects } from '@/data/projects'
+import Hero from '@/components/general/Hero'
+import ProjectDetails from '@/components/projects/ProjectDetails'
 
-const ProjectDetails = () => {
+const ProjectDetailsPage = () => {
 
     const {id} = useParams()
     const projectItem = projects.find((item) => item.title.replace(" ", "-").toLowerCase() === String(id).toLowerCase())
-
+    
     return (
         <div>
-            <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
+            {/* <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
                 <Header />
-            </div>
-            <div className="py-12 md:py-20 bg-gray-100 dark:bg-black px-6 md:px-12 lg:px-20">
-
-                <div className="max-w-7xl mx-auto">
-                    <img src={`/images/${projectItem?.image}`} alt="Project Image" />
-
-                    <div className="">
-                        <h2>{projectItem?.title}</h2>
-                    </div>
-                </div>
-            </div>
+            </div> */}
+            <Hero 
+                title={projectItem?.title || "Project Details"} 
+                subtitle={projectItem?.description || "Details about this project"} 
+                bgImage={projectItem?.image || "hero-bg.jpg"} 
+                action={projectItem?.links || [{title: "", location: ""}, {title: "", location: ""}]}
+                target='_blank'
+            />
+            <ProjectDetails projectItem={projectItem} />
         </div>
     )
 }
 
-export default ProjectDetails
+export default ProjectDetailsPage
