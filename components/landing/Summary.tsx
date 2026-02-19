@@ -96,7 +96,7 @@ const Summary = () => {
                 <div className="text-center">
                     <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>Ready to get started?</h3>
                     <p className="text-gray-600 dark:text-gray-300 mt-2">Join me on this journey of learning and building.</p>
-                    <Button variant='secondary' className="mt-4">Start Learning</Button>
+                    <Button variant='secondary' className="mt-4 inline-block">Start Learning</Button>
                 </div>
             </div>
         </div>

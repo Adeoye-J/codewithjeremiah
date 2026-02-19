@@ -62,7 +62,7 @@ const Faq = () => {
                 <div className="text-center">
                     <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white`}>Have more questions?</h3>
                     <p className="text-gray-600 dark:text-gray-300 mt-2">Reach out directly. I read every message.</p>
-                    <Button variant='secondary' className="mt-4">Contact Me</Button>
+                    <Button variant='secondary' className="mt-4 inline-block">Contact Me</Button>
                 </div>
             </div>
         </div>
