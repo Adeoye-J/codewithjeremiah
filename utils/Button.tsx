@@ -3,7 +3,7 @@ import React from 'react'
 import type { UrlObject } from 'url';
 type Url = string | UrlObject | undefined;
 
-const Button = ({ variant = "primary", size = "medium", onClick, children, target, className = "", href = "", ...props } : { variant?: string, size?: string, onClick?: () => void , children: React.ReactNode, target?: string, className?: string, href?: Url }) => {
+const Button = ({ variant = "primary", size = "medium", button = false, onClick, children, target, className = "", href = "", ...props } : { variant?: string, size?: string, button?: boolean, onClick?: () => void , children: React.ReactNode, target?: string, className?: string, href?: Url }) => {
   
     const baseClasses = "px-3 py-2.5 lg:px-4 border-2 hover:bg-white hover:text-blue-950 transition-colors duration-500 cursor-pointer";
     
@@ -19,7 +19,7 @@ const Button = ({ variant = "primary", size = "medium", onClick, children, targe
     }
 
     return (
-        onClick ? (
+        (onClick || button) ? (
             <button onClick={onClick} className={`${baseClasses} ${variantClasses[variant]} ${sizeClasses[size]} ${className}`} {...props}>
                 {children}
             </button>

@@ -22,7 +22,7 @@ const SubProjects = () => {
             <ProjectList projects={projects} />
 
             <div className="flex justify-center mt-10">
-                <Button variant="outline" size='medium' className="mx-auto mt-8">View All Projects</Button>
+                <Button variant="outline" size='medium' className="mx-auto mt-8">View More</Button>
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import { Blog } from '@/types/blog'
-import AllBlogs from './AllBlogs'
+import BlogList from './BlogList'
 import { Space_Grotesk } from 'next/font/google'
 import Button from '@/utils/Button';
 
@@ -15,14 +15,14 @@ const FeaturedBlogs = ({ blogs }: { blogs: Blog[] }) => {
                     Featured Blogs
                 </h2>
                 <p className="text-sm text-gray-700 dark:text-gray-300">
-                    Hover to view details and tech stack
+                    Click to view details and tech stack
                 </p>
             </div>
 
-            <AllBlogs blogs={blogs} />
+            <BlogList blogs={blogs} />
 
             <div className="flex justify-center mt-10">
-                <Button variant="outline" size='medium' className="mx-auto mt-8">View All Blogs</Button>
+                <Button variant="outline" size='medium' className="mx-auto mt-8">View More</Button>
             </div>
         </div>
     )

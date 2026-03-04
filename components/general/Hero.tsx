@@ -9,7 +9,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", 
 
 const Hero = (
     {title, subtitle, action, bgImage, heightClass, target} : 
-    {title?: string, subtitle?: string, action: Action[], bgImage?: string, heightClass?: string, target?: string}
+    {title?: string, subtitle?: string, action?: Action[], bgImage?: string, heightClass?: string, target?: string}
 ) => {
     
     const imageUrl = `/images/${bgImage || 'hero-bg-1.jpg'}`

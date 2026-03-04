@@ -1,7 +1,6 @@
 "use client"
 
 import { useParams } from 'next/navigation'
-import Header from '@/components/general/Header'
 import { projects } from '@/data/projects'
 import Hero from '@/components/general/Hero'
 import ProjectDetails from '@/components/projects/ProjectDetails'
@@ -12,10 +11,7 @@ const ProjectDetailsPage = () => {
     const projectItem = projects.find((item) => item.title.replace(" ", "-").toLowerCase() === String(id).toLowerCase())
     
     return (
-        <div>
-            {/* <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-20">
-                <Header />
-            </div> */}
+        <div className='min-h-screen'>
             <Hero 
                 title={projectItem?.title || "Project Details"} 
                 subtitle={projectItem?.description || "Details about this project"} 

@@ -1,7 +1,7 @@
 import { Blog } from '@/types/blog'
 import BlogItem from './BlogItem'
 
-const AllBlogs = ({ blogs }: { blogs: Blog[] }) => {
+const BlogList = ({ blogs }: { blogs: Blog[] }) => {
 
     return (
         <div className="w-full">
@@ -14,4 +14,4 @@ const AllBlogs = ({ blogs }: { blogs: Blog[] }) => {
     )
 }
 
-export default AllBlogs
+export default BlogList

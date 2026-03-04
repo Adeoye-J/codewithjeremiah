@@ -1,4 +1,3 @@
-import React from 'react'
 import { footerItems } from '@/data/footerItems'
 import Image from 'next/image'
 
@@ -29,10 +28,8 @@ const Footer = () => {
                         ))
                     }
                 </div>
-
-
-                {/* <p className="text-sm text-gray-500">&copy; {new Date().getFullYear()} Code with Jeremiah. All rights reserved.</p> */}
             </div>
+            
             <div className="max-w-7xl mx-auto my-4 flex flex-col md:flex-row items-center justify-between gap-2">
                 <Image src={"/logos/jeremiah-white-1.png"} alt="Code with Jeremiah Logo" className="" width={150} height={60} />
 
