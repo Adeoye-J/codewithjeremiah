@@ -2,14 +2,10 @@
 import Header from './Header';
 import Button from '@/utils/Button';
 import { Inter, Space_Grotesk } from "next/font/google";
+import { Action } from '@/types/project';
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
-
-export interface Action {
-    title: string,
-    location: string
-}
 
 const Hero = (
     {title, subtitle, action, bgImage, heightClass, target} : 

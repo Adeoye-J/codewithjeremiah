@@ -39,8 +39,6 @@ const ProjectDetails = ({ projectItem } : { projectItem: Project | undefined }) 
                                 })}
                             </div>
                         </div>
-
-                        
                     </div>
 
                     {/* Project Details Side Navigation Table of Contents */}
@@ -51,15 +49,56 @@ const ProjectDetails = ({ projectItem } : { projectItem: Project | undefined }) 
                             <li><a href="#tech-stack" className="text-blue-600 dark:text-blue-400 hover:underline">Tech Stack</a></li>
                             <li><a href="#architecture" className="text-blue-600 dark:text-blue-400 hover:underline">Architecture</a></li>
                             <li><a href="#challenges" className="text-blue-600 dark:text-blue-400 hover:underline">Challenges</a></li>
-                            <li><a href="#lessons" className="text-blue-600 dark:text-blue-400 hover:underline">Lessons Learned</a></li>
+                            <li><a href="#lessons-learned" className="text-blue-600 dark:text-blue-400 hover:underline">Lessons Learned</a></li>
                             <li><a href="#screenshots" className="text-blue-600 dark:text-blue-400 hover:underline">Screenshots</a></li>
                         </ul>
                     </div>
-                    
                 </div>
 
                 {/* Other Project Details */}
-                <div className=""></div>
+                <div className="space-y-6">
+                    <div className="border p-2" id='architecture'>
+                        <h3 className={`${spaceGrotesk.className} font-semibold text-black dark:text-white mb-2`}>Architecture</h3>
+                        <p className='text-justify'>{projectItem?.architecture}</p>
+                    </div>
+                    <div className="border p-2" id='challenges'>
+                        <h3 className={`${spaceGrotesk.className} font-semibold text-black dark:text-white mb-2`}>Challenges</h3>
+                        <p>Below are the sections of challenges faced while building this project.</p>
+                        {
+                            projectItem?.challenges.map((item, index) => (
+                                <div key={index} className="mt-6">
+                                    <h3 className={`${spaceGrotesk.className} font-semibold text-blue-950 mb-2`}>{item.title}</h3>
+                                    <p className='text-justify'>{item.description}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <div className="border p-2" id='lessons-learned'>
+                        <h3 className={`${spaceGrotesk.className} font-semibold text-black dark:text-white mb-2`}>Lessons Learned</h3>
+                        <p>Below are the sections of lessons learned while building this project.</p>
+                        {
+                            projectItem?.lessonsLearned.map((item, index) => (
+                                <div key={index} className="mt-6">
+                                    <h3 className={`${spaceGrotesk.className} font-semibold text-blue-950 mb-2`}>{item.title}</h3>
+                                    <p className='text-justify'>{item.description}</p>
+                                </div>
+                            ))
+                        }
+                    </div>
+                    <div className="" id='screenshots'>
+                        <h3 className={`${spaceGrotesk.className} font-semibold text-black dark:text-white mb-2`}>Screenshots</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                            {
+                                projectItem?.screenshots.map((item, index) => (
+                                    <div key={index} className="">
+                                        <h3 className={`${spaceGrotesk.className} font-semibold text-blue-950 mb-2`}>{'----- '}{item.description}</h3>
+                                        <img alt={item.description} src={`/images/${item.image}`} width={100} height={100} className='w-96 object-cover' />
+                                    </div>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
