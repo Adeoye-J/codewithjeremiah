@@ -24,12 +24,12 @@ const BlogDetails = () => {
                 {projectItem ? (
                     <div className="space-y-4 max-w-7xl mx-auto">
                         <div className="flex flex-col items-center mb-4 md:mb-8">
-                            <div className="flex items-center gap-2">
+                            <div className="flex items-center gap-2 mb-4">
                                 <p className='text-xs md:text-sm lg:text-base text-gray-500'>{projectItem.category}</p>
                                 <span>·</span>
                                 <p className='text-xs md:text-sm lg:text-base text-gray-500'>{projectItem.read_time}</p>
                             </div>
-                            <h1 className={`text-xl md:text-2xl lg:text-4xl font-bold ${spaceGrotesk.className}`}>{projectItem.title}</h1>
+                            <h1 className={`text-xl md:text-2xl lg:text-4xl font-bold text-center ${spaceGrotesk.className}`}>{projectItem.title}</h1>
                         </div>
 
                         <div className="">
@@ -63,6 +63,8 @@ const BlogDetails = () => {
                                     <p className='text-sm md:text-base lg:text-lg text-justify'>{projectItem.content.introduction}</p>
                                 </div>
 
+                                <hr className='border-gray-300 dark:border-gray-600' />
+
                                 {/* Sections */}
                                 {
                                     projectItem.content.sections.map((section, index) => (
@@ -72,6 +74,8 @@ const BlogDetails = () => {
                                         </div>
                                     ))
                                 }
+
+                                <hr className='border-gray-300 dark:border-gray-600' />
 
                                 {/* Conclusion */}
                                 <div className="mb-8 space-y-3">
@@ -88,7 +92,7 @@ const BlogDetails = () => {
                                     <Link href="/blogs" className="inline-block text-sm text-blue-600 dark:text-blue-400 underline">View All Blogs</Link>
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                    {blogs.slice(0, 3).map((blog, index) => (
+                                    {blogs.slice(0, 3).filter(item => item.title.replace(/\s+/g, "-").toLowerCase() !== String(id).toLowerCase()).map((blog, index) => (
                                         <BlogItem key={index} blog={blog} />
                                     ))}
                                 </div>

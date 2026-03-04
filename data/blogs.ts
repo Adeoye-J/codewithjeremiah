@@ -9,7 +9,7 @@ export const blogs : Blog[] = [
         author: "Jeremiah Bankole",
         category: "React",
         tags: ["React", "Hooks", "JavaScript"],
-        banner: "react-hooks.png",
+        banner: "hero-bg-1.jpg",
         read_time: "5 min read",
         content: {
             introduction: "React Hooks have become an essential part of modern React development. They allow developers to use state and other React features without writing a class component. In this article, we'll explore what React Hooks are, how they work, and how you can use them to simplify your React code.",
@@ -38,7 +38,7 @@ export const blogs : Blog[] = [
         author: "Jeremiah Bankole",
         category: "TypeScript",
         tags: ["TypeScript", "React", "JavaScript"],
-        banner: "typescript.png",
+        banner: "hero-bg-2.jpg",
         read_time: "7 min read",
         content: {
             introduction: "TypeScript is a powerful tool that can help improve the quality and maintainability of your code. It adds static typing to JavaScript, which can catch errors early and provide better tooling support. In this article, we'll explore how to get started with TypeScript in your React projects and the benefits it can bring.",
@@ -67,7 +67,7 @@ export const blogs : Blog[] = [
         author: "Jeremiah Bankole",
         category: "Next.js",
         tags: ["Next.js", "React", "JavaScript"],
-        banner: "modern-portfolio.jpg",
+        banner: "hero-bg.jpg",
         read_time: "10 min read",
         content: {
             introduction: "In this article, we'll walk through the process of building a personal portfolio website using Next.js. Next.js is a powerful React framework that offers features like server-side rendering and static site generation, making it an excellent choice for creating fast and SEO-friendly websites.",

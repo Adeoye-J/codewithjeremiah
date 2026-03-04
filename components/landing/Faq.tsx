@@ -50,9 +50,9 @@ const Faq = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 max-w-7xl mx-auto mt-10">
                 {faqItems.map((item, index) => (
-                    <div className="flex flex-col items-center text-center space-y-4 rounded-lg shadow-md p-6 md:p-8 mx-auto text-black dark:text-white" key={index}>
+                    <div className="flex flex-col items-center text-center space-y-4 rounded-lg shadow-md p-6 md:p-8 mx-auto text-black dark:text-white hover:-translate-y-2 duration-500 ease-in-out group" key={index}>
                         <span className='text-blue-600 dark:text-blue-400'>{item.icon}</span>
-                        <h3 className='font-semibold dark:text-white'>{item.question}</h3>
+                        <h3 className='font-semibold dark:text-white group-hover:text-blue-600 transition-colors duration-500 ease-in-out'>{item.question}</h3>
                         <p className="text-gray-600 dark:text-gray-300 text-sm">{item.answer}</p>
                     </div>
                 ))}

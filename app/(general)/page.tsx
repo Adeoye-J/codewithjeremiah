@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="min-h-screen text-black">
         <Hero 
-            title="Build, Learn, and Grow with Me" 
+            title="Build, Learn, and Grow in Tech" 
             subtitle="Practical tech blogs, real-world projects, and beginner-friendly courses." 
             action={[{title: "Read Blogs", location: "/blogs"}, {title: "View Projects", location: "/projects"}]}
             heightClass="md:min-h-150" 

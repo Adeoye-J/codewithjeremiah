@@ -5,7 +5,7 @@ type Url = string | UrlObject | undefined;
 
 const Button = ({ variant = "primary", size = "medium", onClick, children, target, className = "", href = "", ...props } : { variant?: string, size?: string, onClick?: () => void , children: React.ReactNode, target?: string, className?: string, href?: Url }) => {
   
-    const baseClasses = "px-3 py-4 lg:px-6 lg:py-4 border-2 hover:bg-white hover:text-blue-950 transition-colors duration-500 cursor-pointer";
+    const baseClasses = "px-3 py-2.5 lg:px-4 border-2 hover:bg-white hover:text-blue-950 transition-colors duration-500 cursor-pointer";
     
     const variantClasses : Record<string, string> = {
         primary: "bg-transparent text-white border-white hover:border-blue-950",

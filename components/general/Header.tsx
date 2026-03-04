@@ -15,26 +15,26 @@ const Header = ({ bgColor = "bg-blue-950 dark:bg-black", otherStyles= "" } : {bg
 
     return (
         <header className={`${bgColor} text-white ${otherStyles}`}>
-            <div className={`mx-auto max-w-7xl py-4 ${bgColor} text-white flex items-center justify-between`}>
+            <div className={`mx-auto max-w-7xl py-3 ${bgColor} text-white flex items-center justify-between`}>
                 <Link href="/">
-                    <Image src={"/logos/jeremiah-white-1.png"} alt="Jeremiah Logo" className="" width={200} height={80} />
+                    <Image src={"/logos/jeremiah-white-1.png"} alt="Jeremiah Logo" className="w-36" width={200} height={80} />
                 </Link>
 
                 <nav className='hidden sm:block'>
                     <ul className="flex space-x-3 lg:space-x-8">
                         {navItems.map((item) => (
                             <li key={item.name}>
-                                <Link href={item.href} className={`hover:text-white font-semibold text-xs lg:text-base transition-colors ${pathname === item.href ? 'text-white' : 'text-white/50'}`}>{item.name}</Link>
+                                <Link href={item.href} className={`hover:text-white font-semibold text-xs lg:text-sm transition-colors ${pathname.includes(item.href) ? 'text-white' : 'text-white/50'}`}>{item.name}</Link>
                             </li>
                         ))}
                     </ul>
                 </nav>
 
-                <Button href={"/sign-in"} className='tracking-wider hidden sm:block'>
+                <Button href={"/sign-in"} className='tracking-wider hidden sm:block' size='small'>
                     Sign in
                 </Button>
 
-                <Button className='block sm:hidden' onClick={() => setMenuOpen(true)}>
+                <Button className='block sm:hidden' size='small' onClick={() => setMenuOpen(true)}>
                     <MenuIcon size={24} />
                 </Button>
 
