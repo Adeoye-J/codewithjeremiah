@@ -1,4 +1,4 @@
-export const first_filters = [
+export const types = [
     {
         name: "All Types",
         value: ""
@@ -17,7 +17,7 @@ export const first_filters = [
     },
 ]
 
-export const second_filters = [
+export const stacks = [
     {
         name: "All Stacks",
         value: "",

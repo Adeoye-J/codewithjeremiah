@@ -4,7 +4,7 @@ import { useState } from 'react';
 import ProjectCard from './ProjectCard'
 import { Project } from '@/types/project';
 import FilterItems from '../general/FilterItems';
-import { first_filters, second_filters } from '@/data/projectFilters';
+import { types, stacks } from '@/data/projectFilters';
 
 const ProjectList = ({projects} : { projects: Project[] }) => {
     const [type, setType] = useState("");
@@ -37,8 +37,8 @@ const ProjectList = ({projects} : { projects: Project[] }) => {
                 setFirstFilter={setType} 
                 setSecondFilter={setStack} 
                 filterItems={filterItems} 
-                firstFilters={first_filters}
-                secondFilters={second_filters}
+                firstFilters={types}
+                secondFilters={stacks}
             />
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center-safe">
                 {filteredProjects.map((project) => (
