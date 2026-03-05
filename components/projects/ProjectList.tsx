@@ -3,7 +3,8 @@
 import { useState } from 'react';
 import ProjectCard from './ProjectCard'
 import { Project } from '@/types/project';
-import ProjectFilters from './ProjectsFilter';
+import FilterItems from '../general/FilterItems';
+import { first_filters, second_filters } from '@/data/projectFilters';
 
 const ProjectList = ({projects} : { projects: Project[] }) => {
     const [type, setType] = useState("");
@@ -11,11 +12,11 @@ const ProjectList = ({projects} : { projects: Project[] }) => {
     const [search, setSearch] = useState("");
     const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
 
-    const filterProjects = () => {
+    const filterItems = () => {
         const filtered = projects.filter((project) => {
-            const matchesType = type ? project.type === type : true;
+            const matchesType = type ? String(project.type).toLowerCase() === type.toLowerCase() : true;
             const matchesStack = stack
-                ? project.techStack.includes(stack)
+                ? String(project.techStack).toLowerCase().includes(stack.toLowerCase())
                 : true;
             const matchesSearch = search                
                 ? project.title.toLowerCase().includes(search.toLowerCase()) ||
@@ -28,7 +29,17 @@ const ProjectList = ({projects} : { projects: Project[] }) => {
 
     return (
         <div className="w-full">
-            <ProjectFilters projects={projects} type={type} stack={stack} search={search} setSearch={setSearch} setType={setType} setStack={setStack} filterProjects={filterProjects} />
+            <FilterItems 
+                firstFilter={type} 
+                secondFilter={stack} 
+                search={search} 
+                setSearch={setSearch} 
+                setFirstFilter={setType} 
+                setSecondFilter={setStack} 
+                filterItems={filterItems} 
+                firstFilters={first_filters}
+                secondFilters={second_filters}
+            />
             <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 place-items-center-safe">
                 {filteredProjects.map((project) => (
                     <ProjectCard key={project.id} bgImage={project.image} primaryColor={project.primaryColor} title={project.title} description={project.description} stack={project.techStack} />

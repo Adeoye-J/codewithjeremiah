@@ -110,7 +110,7 @@ export const projects : Project[] = [
         title: "Project Four",
         description: "This is a brief description of Project Four.",
         detailedDescription: "This is a very detailed description for project four",
-        techStack: ["Svelte", "Sapper", "CSS Modules"],
+        techStack: ["Svelte", "Sapper", "CSS Modules", "Express.js"],
         image: "summary-courses.jpg",
         links: [{"title": "Github", "location": "https://github.com/example/project-four"}, {"title": "Live", "location": "https://example.com/project-four"}],
         primaryColor: "#ff6b6b",
