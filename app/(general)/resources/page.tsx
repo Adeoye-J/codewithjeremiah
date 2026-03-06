@@ -1,4 +1,5 @@
 import Hero from '@/components/general/Hero'
+import ResourcesCategories from '@/components/resources/ResourcesCategories'
 
 const ResourcesPage = () => {
     return (
@@ -9,6 +10,7 @@ const ResourcesPage = () => {
                 action={[{"title": "Courses", "location": "/courses"}, {"title": "My Blogs", "location": "/blogs"}]} 
                 bgImage='hero-bg.jpg' 
             />
+            <ResourcesCategories />
         </div>
     )
 }

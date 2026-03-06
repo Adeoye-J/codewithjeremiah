@@ -1,6 +1,6 @@
 
 import Hero from '@/components/general/Hero'
-import SubProjects from '@/components/projects/SubProjects'
+import FeaturedProjects from '@/components/projects/FeaturedProjects'
 
 const ProjectsPage = () => {
 
@@ -12,7 +12,7 @@ const ProjectsPage = () => {
                 action={[{"title": "View All Projects", "location": "/projects"}, {"title": "Contact Me", "location": "/contact"}]} 
                 bgImage='hero-bg.jpg' 
             />
-            <SubProjects />
+            <FeaturedProjects />
         </div>
     )
 }

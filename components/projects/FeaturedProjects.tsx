@@ -6,7 +6,7 @@ import Button from '@/utils/Button';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
-const SubProjects = () => {
+const FeaturedProjects = () => {
     return (
         <div className="py-12 md:py-20 bg-gray-100 dark:bg-black px-6 md:px-12 lg:px-20">
             <div className="max-w-7xl mx-auto text-center space-y-2 mb-12">
@@ -28,4 +28,4 @@ const SubProjects = () => {
     )
 }
 
-export default SubProjects
+export default FeaturedProjects
