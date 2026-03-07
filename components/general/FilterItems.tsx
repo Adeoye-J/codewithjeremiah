@@ -7,7 +7,7 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", 
 
 const FilterItems = (
     {firstFilter, secondFilter, search, setSearch, setFirstFilter, setSecondFilter, filterItems, firstFilters, secondFilters} : 
-    { firstFilter: string, secondFilter: string, search: string, setSearch: (search: string) => void, setFirstFilter: (type: string) => void, setSecondFilter: (stack: string) => void, filterItems: () => void, firstFilters: Record<string, string>[], secondFilters: Record<string, string>[] }) => {
+    { firstFilter?: string, secondFilter?: string, search: string, setSearch: (search: string) => void, setFirstFilter?: (type: string) => void, setSecondFilter?: (stack: string) => void, filterItems: () => void, firstFilters?: Record<string, string>[], secondFilters?: Record<string, string>[] }) => {
 
     useEffect(() => {
         filterItems();
@@ -24,23 +24,32 @@ const FilterItems = (
                     className={`${spaceGrotesk.className} w-full md:w-80 rounded-lg border px-4 py-2`}
                 />
 
-                <div className="flex gap-3">
-                    <select className={`${spaceGrotesk.className} rounded-lg border px-3 py-2 dark:bg-black bg-gray-100 dark:text-white text-black`} value={firstFilter} onChange={(e) => { setFirstFilter(e.target.value) }}>
+                {
+                    (firstFilters || secondFilters) &&
+                    <div className="flex gap-3">
                         {
-                            firstFilters.map((item, index) => (
-                                <option value={item.value} key={index}>{item.name}</option>
-                            ))
+                            (firstFilters && firstFilter && setFirstFilter) &&
+                            <select className={`${spaceGrotesk.className} rounded-lg border px-3 py-2 dark:bg-black bg-gray-100 dark:text-white text-black`} value={firstFilter} onChange={(e) => { setFirstFilter(e.target.value) }}>
+                                {
+                                    firstFilters.map((item, index) => (
+                                        <option value={item.value} key={index}>{item.name}</option>
+                                    ))
+                                }
+                            </select>
                         }
-                    </select>
 
-                    <select className={`${spaceGrotesk.className} rounded-lg border px-3 py-2 dark:bg-black bg-gray-100 dark:text-white text-black`} value={secondFilter} onChange={(e) => setSecondFilter(e.target.value)} >
                         {
-                            secondFilters.map((item, index) => (
-                                <option value={item.value} key={index}>{item.name}</option>
-                            ))
+                            (secondFilters && secondFilter && setSecondFilter) &&
+                            <select className={`${spaceGrotesk.className} rounded-lg border px-3 py-2 dark:bg-black bg-gray-100 dark:text-white text-black`} value={secondFilter} onChange={(e) => setSecondFilter(e.target.value)} >
+                                {
+                                    secondFilters.map((item, index) => (
+                                        <option value={item.value} key={index}>{item.name}</option>
+                                    ))
+                                }
+                            </select>
                         }
-                    </select>
-                </div>
+                    </div>
+                }
             </div>
         </>
     );
