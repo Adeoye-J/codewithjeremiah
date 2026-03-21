@@ -47,6 +47,7 @@ export default function RootLayout({
         }
       >
         {/* <HeaderCondition /> */}
+        <Header />
         {children}
         <Footer />
       </body>

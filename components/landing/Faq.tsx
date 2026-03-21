@@ -1,7 +1,7 @@
 import React from 'react'
 import { Space_Grotesk } from "next/font/google";
 import { ChevronsLeftRight, CodeXml, DollarSign, FolderKanban, Upload, WifiSync } from 'lucide-react';
-import Button from '@/utils/Button';
+import { Button } from '../ui/button';
 
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });

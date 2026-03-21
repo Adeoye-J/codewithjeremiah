@@ -1,40 +1,34 @@
 
-import Header from './Header';
-import Button from '@/utils/Button';
+import Image from 'next/image';
+import { Button } from '../ui/button';
 import { Inter, Space_Grotesk } from "next/font/google";
-import { Action } from '@/types/project';
+import { Mail, Sparkle, Sparkles } from 'lucide-react';
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
-const Hero = (
-    {title, subtitle, action, bgImage, heightClass, target} : 
-    {title?: string, subtitle?: string, action?: Action[], bgImage?: string, heightClass?: string, target?: string}
-) => {
+const Hero = () => {
     
-    const imageUrl = `/images/${bgImage || 'hero-bg-1.jpg'}`
-
     return (
-        <div className={`px-6 md:px-12 lg:px-20 bg-cover bg-center bg-no-repeat bg-black/70 dark:bg-black/85 bg-blend-overlay`} style={{ backgroundImage: `url(${imageUrl})` }}>
-            <div className="mx-auto max-w-7xl flex flex-col items-center">
-                <div className="w-full">
-                    <Header bgColor="bg-transparent dark:bg-transparent" />
-                </div>
-                <section className={` ${heightClass || 'min-h-100 sm:min-h-125'} flex flex-col items-center justify-center text-center py-20 w-full`}>
-                    <div className="flex flex-col items-center justify-center text-center px-2">
-                        <h1 className={`${spaceGrotesk.className} text-3xl md:text-5xl lg:text-7xl font-extrabold text-white mb-6 drop-shadow-lg max-w-2xl`}>{title}</h1>
-                        <p className={`${inter.className} text-lg md:text-xl lg:text-2xl font-light text-white mb-8 drop-shadow-lg max-w-6xl tracking-wider`}>{subtitle}</p>
-                        <div className="flex flex-col sm:flex-row items-center gap-3">
-                            {/* <Button onClick={redirect(action[0]["location"])} className="tracking-wider" size='large'>{action[0]["title"]}</Button>
-                            <Button onClick={redirect(action[1]["location"])} variant="secondary" size='large' className="tracking-wider">{action[1]["title"]}</Button> */}
-                            {
-                                action?.map((item, index) => (
-                                    <Button target={target ?? "_self"} href={`${item.location}`} key={index} className='tracking-wider' size='large' variant={index % 2 === 1 ? "primary" : "secondary" }>
-                                        {item.title}
-                                    </Button>
-                                ))
-                            }
+        <div className={`bg-cover bg-center bg-no-repeat `}>
+            <div className="container mx-auto px-2 md:px-8 py-12 md:py-20 flex flex-col items-center">
+                <section className={`flex flex-col md:flex-row items-center text-center md:text-start w-full gap-10 md:gap-4`}>
+                    <div className="flex flex-col items-center md:items-start justify-center flex-1 space-y-4">
+                        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container text-xs font-bold tracking-widest uppercase">
+                            <Sparkles size={20} />
+                            New Course: Master Tailwind CSS
                         </div>
+                        <h1 className={`${spaceGrotesk.className} text-3xl md:text-5xl lg:text-7xl font-extrabold drop-shadow-lg`}>Build, Learn, and <span className='text-secondary'>Grow With Me</span></h1>
+                        <p className={`${inter.className} text-lg md:text-xl font-light drop-shadow-lg tracking-wider`}>A curated blend of technical deep-dives, production-ready project breakdowns, and structured courses designed for the modern developer.</p>
+                        <div className="flex flex-wrap gap-4">
+                            <Button variant="secondary" size="lg" className="p-6 md:p-8 rounded-xl font-bold text-lg cursor-pointer shadow-xl shadow-secondary/25 hover:shadow-2xl hover:-translate-y-1 hover:transition-all">Start Learning</Button>
+                            <Button variant="ghost" size="lg" className="p-6 md:p-8 rounded-xl font-bold text-lg cursor-pointer shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">View Projects</Button>
+                        </div>
+                    </div>
+
+                    {/* Side Image */}
+                    <div className='flex-1'>
+                        <Image className='w-full rounded-2xl' width={1200} height={800} src="/images/summary-projects.jpg" alt='Hero Image showing a Laptop' />
                     </div>
                 </section>
             </div>

@@ -1,4 +1,4 @@
-import Button from '@/utils/Button';
+import { Button } from '../ui/button';
 import { GithubIcon, WholeWord } from 'lucide-react'
 import { Space_Grotesk } from 'next/font/google'
 

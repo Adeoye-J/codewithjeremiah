@@ -1,4 +1,4 @@
-import Button from '@/utils/Button'
+import { Button } from '../ui/button';
 import { Space_Grotesk } from 'next/font/google'
 import { resources } from '@/data/resources';
 import Image from 'next/image';

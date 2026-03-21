@@ -2,7 +2,7 @@ import React from 'react'
 import ProjectList from './ProjectList'
 import { projects } from '@/data/projects'
 import { Space_Grotesk } from 'next/font/google'
-import Button from '@/utils/Button';
+import { Button } from '../ui/button';
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 

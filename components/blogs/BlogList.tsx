@@ -5,6 +5,7 @@ import BlogItem from './BlogItem'
 import FilterItems from '../general/FilterItems'
 import { useState } from 'react'
 import { categories, tags } from '@/data/blogFilters'
+import Link from 'next/link'
 
 const BlogList = ({ blogs }: { blogs: Blog[] }) => {
     const [category, setCategory] = useState("")
@@ -29,11 +30,17 @@ const BlogList = ({ blogs }: { blogs: Blog[] }) => {
 
     return (
         <div className="w-full">
-            <FilterItems filterItems={filterItems} firstFilter={category} setFirstFilter={setCategory} secondFilter={tag} setSecondFilter={setTag} search={search} setSearch={setSearch} firstFilters={categories} secondFilters={tags} />
-            <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-8">
-                {filteredBlogs.map((blog) => (
-                    <BlogItem key={blog.id} blog={blog} />
-                ))}
+            {/* <FilterItems filterItems={filterItems} firstFilter={category} setFirstFilter={setCategory} secondFilter={tag} setSecondFilter={setTag} search={search} setSearch={setSearch} firstFilters={categories} secondFilters={tags} /> */}
+            <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-8">
+                {filteredBlogs.map((blog) => {
+                    const navRoute = blog.title?.toLowerCase().replace(/\s+/g, '-');
+
+                    return (
+                        <Link href={`/blogs/${navRoute}`} className="block">
+                            <BlogItem key={blog.id} blog={blog} />
+                        </Link>
+                    )
+                })}
             </div>
         </div>
     )

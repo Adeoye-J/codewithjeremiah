@@ -1,6 +1,6 @@
 import React from 'react'
 import { Space_Grotesk } from "next/font/google";
-import Button from '@/utils/Button';
+import { Button } from '../ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Shuffle, ChevronRight } from 'lucide-react';
