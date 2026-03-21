@@ -10,88 +10,280 @@ html {
   box-sizing: border-box;
 }
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-/* Post-Implementation Styles */
-
-/* img {
-  max-width: 100%;
-  height: auto;
 } */
 
-::-webkit-scrollbar {
-  width: 8px;
+/* =========================
+   1. DESIGN TOKENS
+========================= */
+
+:root {
+  /* Surfaces */
+  --surface: #f8f9fa;
+  --surface-low: #f1f4f6;
+  --surface-lowest: #ffffff;
+  --surface-highest: #dbe4e7;
+
+  /* Text */
+  --on-surface: #2b3437;
+
+  /* Accents */
+  --primary: #2b3437;
+  --secondary: #006d4b;
+  --secondary-dim: #005f41;
+  --tertiary: #4e45e4;
+
+  /* Supporting */
+  --outline-variant: #abb3b7;
+  --inverse-surface: #0c0f10;
+  --secondary-fixed: #85f8c4;
+
+  /* Typography */
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: rgba(100, 100, 100, 0.5);
-  border-radius: 4px;
+/* =========================
+   2. BASE STYLES
+========================= */
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background: var(--surface);
+    color: var(--on-surface);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  small {
+    font-size: 0.6875rem;
+    font-weight: 500;
+  }
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(100, 100, 100, 0.7);
+/* =========================
+   3. LAYOUT
+========================= */
+
+@layer components {
+  .section {
+    @apply px-6 py-12 md:px-12;
+  }
+
+  .section-lg {
+    @apply px-6 py-20 md:px-16;
+  }
+
+  .container-editorial {
+    max-width: 1100px;
+  }
 }
 
-code {
-  font-family: var(--font-mono);
+/* =========================
+   4. SURFACES (NO-LINE RULE)
+========================= */
+
+@layer utilities {
+  .bg-surface { background: var(--surface); }
+  .bg-surface-low { background: var(--surface-low); }
+  .bg-surface-card { background: var(--surface-lowest); }
+  .bg-surface-high { background: var(--surface-highest); }
 }
 
-pre {
-  background-color: #f5f5f5;
-  padding: 1rem;
-  border-radius: 8px;
-  overflow-x: auto;
+/* =========================
+   5. TEXT COLORS
+========================= */
+
+@layer utilities {
+  .text-primary { color: var(--primary); }
+  .text-secondary { color: var(--secondary); }
+  .text-tertiary { color: var(--tertiary); }
+  .text-muted { color: rgba(43, 52, 55, 0.6); }
 }
 
-pre code {
-  background-color: transparent;
-  padding: 0;
+/* =========================
+   6. BACKGROUND ACCENTS
+========================= */
+
+@layer utilities {
+  .bg-primary { background-color: var(--primary); }
+  .bg-secondary { background-color: var(--secondary); }
+  .bg-tertiary { background-color: var(--tertiary); }
 }
 
-blockquote {
-  border-left: 4px solid #ccc;
-  padding-left: 1rem;
-  color: #666;
-  margin: 1rem 0;
+/* =========================
+   7. GLASSMORPHISM
+========================= */
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 20px 40px rgba(43, 52, 55, 0.06);
+  }
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #eee;
-  margin: 2rem 0;
+/* =========================
+   8. BUTTONS
+========================= */
+
+@layer components {
+  .btn {
+    @apply px-5 py-2.5 text-sm rounded-md transition;
+  }
+
+  .btn-primary {
+    color: white;
+    background: linear-gradient(45deg, var(--secondary), var(--secondary-dim));
+  }
+
+  .btn-primary:hover {
+    opacity: 0.95;
+  }
+
+  .btn-secondary {
+    background: #e2e2e2;
+    color: var(--on-surface);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--primary);
+  }
+
+  .btn-ghost:hover {
+    background: var(--surface-highest);
+  }
 }
 
-/* .container {
-  max-width: 1200px;
-  margin: 0 auto;
-} */
+/* =========================
+   9. INPUTS (Underline Focus)
+========================= */
 
-.flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@layer components {
+  .input {
+    width: 100%;
+    padding: 0.5rem 0.25rem;
+    background: var(--surface-low);
+    outline: none;
+    border-bottom: 1px solid transparent;
+    transition: border 0.2s ease;
+  }
+
+  .input:focus {
+    border-bottom: 1px solid var(--tertiary);
+  }
+}
+
+/* =========================
+   10. CARDS
+========================= */
+
+@layer components {
+  .card {
+    background: var(--surface-lowest);
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+}
+
+/* =========================
+   11. CODE BLOCK
+========================= */
+
+@layer components {
+  .code {
+    background: var(--inverse-surface);
+    color: var(--secondary-fixed);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+
+  .code-wrapper {
+    position: relative;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    font-size: 0.75rem;
+    color: white;
+  }
+
+  .code-wrapper:hover .copy-btn {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   12. SHADOW SYSTEM
+========================= */
+
+@layer utilities {
+  .shadow-ambient {
+    box-shadow: 0 20px 40px rgba(43, 52, 55, 0.06);
+  }
+}
+
+/* =========================
+   13. GHOST BORDER
+========================= */
+
+@layer utilities {
+  .ghost-border {
+    outline: 1px solid rgba(171, 179, 183, 0.15);
+  }
+}
+
+/* =========================
+   14. STATUS BLIPS
+========================= */
+
+@layer components {
+  .status {
+    width: 6px;
+    height: 6px;
+    border-radius: 999px;
+  }
+
+  .status-online {
+    background: var(--secondary);
+  }
+
+  .status-progress {
+    background: var(--tertiary);
+  }
 }

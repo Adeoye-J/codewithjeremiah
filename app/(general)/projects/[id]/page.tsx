@@ -5,9 +5,10 @@ import { projects } from '@/data/projects'
 import Hero from '@/components/general/Hero'
 import ProjectDetails from '@/components/projects/ProjectDetails'
 
-const ProjectDetailsPage = () => {
+const ProjectDetailsPage = async ({params} : {params: Promise<{id: string}>}) => {
 
-    const {id} = useParams()
+    // const {id} = useParams()
+    const {id} = await params
     const projectItem = projects.find((item) => item.title.replace(" ", "-").toLowerCase() === String(id).toLowerCase())
     
     return (

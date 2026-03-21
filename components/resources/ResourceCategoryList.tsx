@@ -37,7 +37,9 @@ const ResourceCategoryList = () => {
             // return matchesType && matchesStack && matchesSearch;
             return matchesSearch;
         });
-        setFilteredResources(filtered);
+        if (filtered) {
+            setFilteredResources(filtered);
+        }
     };
 
     return (
@@ -49,14 +51,8 @@ const ResourceCategoryList = () => {
 
                 <FilterItems 
                     filterItems={filterItems}
-                    // firstFilter=""
-                    // setFirstFilter={}
-                    // secondFilter=""
-                    // setSecondFilter={}
                     search={search}
                     setSearch={setSearch}
-                    // firstFilters={}
-                    // secondFilters={}
                 />
             </div>
 
