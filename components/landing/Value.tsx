@@ -3,7 +3,7 @@ import { GraduationCap, Pickaxe, SmilePlus } from "lucide-react"
 const Value = () => {
     return (
         <section className="bg-surface-low py-12 md:py-20">
-            <div className="container mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div className="container mx-auto px-3 md:px-8 grid grid-cols-1 md:grid-cols-3 gap-12">
                 <div className="flex items-start gap-6">
                     <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center shadow-lg text-tertiary">
                         <SmilePlus />

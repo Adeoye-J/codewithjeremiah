@@ -41,6 +41,7 @@ html {
   --secondary-dim: #005f41;
   --secondary-container: #85f8c4;
   --tertiary: #4e45e4;
+  --tertiary-container: #6760fd;
 
   /* Supporting */
   --outline-variant: #abb3b7;
@@ -226,6 +227,11 @@ html {
   .text-secondary { color: var(--secondary); }
   .text-tertiary { color: var(--tertiary); }
   .text-muted { color: rgba(43, 52, 55, 0.6); }
+
+  .text-on-surface {color: var(--on-surface)}
+  .text-surface-low {color: var(--surface-low)}
+  .text-surface-card {color: var(--surface-lowest)}
+  .text-surface-high {color: var(--surface-highest)}
 }
 
 /* =========================
@@ -236,6 +242,7 @@ html {
   .bg-primary { background-color: var(--primary); }
   .bg-secondary { background-color: var(--secondary); }
   .bg-secondary-container { background-color: var(--secondary-container);}
+  .bg-tertiary-container { background-color: var(--tertiary-container);}
   .bg-tertiary { background-color: var(--tertiary); }
 }
 

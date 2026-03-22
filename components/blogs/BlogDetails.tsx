@@ -6,6 +6,8 @@ import { blogs } from '@/data/blogs'
 import { Space_Grotesk } from 'next/font/google'
 import formatDate from '@/lib/formatDate'
 import { useParams } from 'next/navigation'
+import BlogList from './BlogList'
+import { ArrowRight } from 'lucide-react'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
@@ -13,6 +15,7 @@ const BlogDetails = () => {
 
     const {id} = useParams()
     const blogItem = blogs.find((item) => item.title.replace(/\s+/g, "-").toLowerCase() === String(id).toLowerCase())
+    const relatedBlogs = blogs.slice(0, 3).filter(item => item.title.replace(/\s+/g, "-").toLowerCase() !== String(id).toLowerCase())
 
     return (
         <div className="bg-gray-100 dark:bg-black px-6 md:px-12 lg:px-20 min-h-screen py-6 md:py-12">
@@ -82,15 +85,26 @@ const BlogDetails = () => {
 
                         {/* Recent Blogs */}
                         <div className="mt-28">
-                            <div className="flex justify-between items-center mb-6">
+                            {/* <div className="flex justify-between items-center mb-6">
                                 <h2 className={`text-base md:text-lg lg:text-xl font-semibold ${spaceGrotesk.className}`}>Recent Blogs</h2>
                                 <Link href="/blogs" className="inline-block text-sm text-blue-600 dark:text-blue-400 underline">View All Blogs</Link>
+                            </div> */}
+                            <div className="mb-12 flex flex-col sm:flex-row items-start sm:item-center justify-between gap-2">
+                                <div className="space-y-2">
+                                    <h2 className={`${spaceGrotesk.className} text-3xl lg:text-4xl font-extrabold tracking-tight`}>
+                                        Related Blogs
+                                    </h2>
+                                    <p className="text-lg text-on-surface">
+                                        More technical insights for curious minds and developers.
+                                    </p>
+                                </div>
+
+                                <Link href={"/blogs"} className='flex items-center gap-2 group text-tertiary cursor-pointer hover:underline'>
+                                    <span className="font-bold">View All Blogs</span>
+                                    <ArrowRight size={20} className='group-hover:translate-x-2 transition-all duration-500' />
+                                </Link>
                             </div>
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                                {blogs.slice(0, 3).filter(item => item.title.replace(/\s+/g, "-").toLowerCase() !== String(id).toLowerCase()).map((blog, index) => (
-                                    <BlogItem key={index} blog={blog} />
-                                ))}
-                            </div>
+                            <BlogList blogs={relatedBlogs} filter={false} />
                         </div>
                     </div>
                 </div>
