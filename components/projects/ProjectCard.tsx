@@ -1,4 +1,4 @@
-import { Button } from '../ui/button';
+// import { Button } from '../ui/button';
 import { GithubIcon, WholeWord } from 'lucide-react'
 import { Space_Grotesk } from 'next/font/google'
 
@@ -26,7 +26,7 @@ const ProjectCard = ({ bgImage, primaryColor, title, description, stack }: { bgI
                             <h3 className={`${spaceGrotesk.className} text-white font-bold text-xl`}>{title}</h3>
                             <p className={`${spaceGrotesk.className} mb-2`}>{description}</p>
                             <p className={`${spaceGrotesk.className} text-sm text-gray-300`}>Tech Stack: {stack?.join(', ')}</p>
-                            <Button href={`/projects/${navRoute}`} size='small'>View Details</Button>
+                            {/* <Button href={`/projects/${navRoute}`} size='small'>View Details</Button> */}
                         </div>
                     </div>
 

@@ -1,4 +1,4 @@
-import { Button } from '../ui/button';
+// import { Button } from '../ui/button';
 import { Space_Grotesk } from 'next/font/google'
 import { resources } from '@/data/resources';
 import Image from 'next/image';
@@ -39,7 +39,7 @@ const ResourcesCategories = () => {
                                             <h3 className={`${spaceGrotesk.className} text-xl md:text-2xl font-bold dark:text-white hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300`}>{item.name}</h3>
                                         </Link>
                                         <p className='text-gray-600 dark:text-gray-300 italic text-sm'>{item.excerpt}</p>
-                                        <Button size='small' variant='secondary' href={`/resources/${navRoute}`} className='inline-block md:hidden'>Explore</Button>
+                                        {/* <Button size='small' variant='secondary' href={`/resources/${navRoute}`} className='inline-block md:hidden'>Explore</Button> */}
                                     </div>
                                 </div>
                             )
