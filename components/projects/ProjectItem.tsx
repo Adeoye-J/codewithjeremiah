@@ -16,7 +16,7 @@ const ProjectItem = ({ project }: { project: Project }) => {
                     <div className="flex gap-2">
                         {
                             project.techStack.map((stack, id) => (
-                                <span className="text-[10px] bg-white/20 px-2.5 py-1 rounded-full font-bold uppercase shadow-sm text-white">{stack}</span>
+                                <span key={id} className="text-[10px] bg-white/20 px-2.5 py-1 rounded-full font-bold uppercase shadow-sm text-white">{stack}</span>
                             ))
                         }
                     </div>

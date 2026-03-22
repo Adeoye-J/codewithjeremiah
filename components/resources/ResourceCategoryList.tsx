@@ -9,7 +9,6 @@ import { resources } from "@/data/resources"
 import { Resource, ResourceContent } from "@/types/resource"
 import { useParams } from "next/navigation"
 import ItemNotFound from "../general/ItemNotFound"
-import Button from "@/utils/Button"
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
@@ -78,7 +77,7 @@ const ResourceCategoryList = () => {
                                         <p className='text-xs text-gray-500 dark:text-gray-400'>{resource.preface}</p>
                                     </div>
                                 </div>
-                                <Button size='small' variant='secondary' href={`/resources/${navRoute}`} className='inline-block md:hidden'>Explore</Button>
+                                {/* <Button size='small' variant='secondary' href={`/resources/${navRoute}`} className='inline-block md:hidden'>Explore</Button> */}
                                 {/* <p className="text-sm text-gray-700 dark:text-gray-300">{resource.preface}</p> */}
                             </div>
                         </div>
