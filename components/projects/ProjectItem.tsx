@@ -11,12 +11,12 @@ const ProjectItem = ({ project }: { project: Project }) => {
     return (
         <div className="glass">
             <div className={`${(project.id === 2) ? "bg-tertiary-container" : "bg-secondary" }  text-on-tertiary p-8 rounded-3xl relative overflow-hidden group flex flex-col justify-between min-h-96 shadow-xl shadow-tertiary/10`}>
-                <div className="relative z-10 space-y-3">
+                <div className="relative z-10 space-y-4">
                     {/* <span className="text-[10px] bg-white/20 px-3 py-1 rounded-full font-bold uppercase backdrop-blur-sm">TypeScript</span> */}
-                    <div className="flex gap-2">
+                    <div className="flex flex-wrap gap-2">
                         {
                             project.techStack.map((stack, id) => (
-                                <span key={id} className="text-[10px] bg-white/20 px-2.5 py-1 rounded-full font-bold uppercase shadow-sm text-white">{stack}</span>
+                                <span key={id} className="text-[10px] text-nowrap bg-white/20 px-2.5 py-1 rounded-full font-bold uppercase shadow-sm text-white">{stack}</span>
                             ))
                         }
                     </div>

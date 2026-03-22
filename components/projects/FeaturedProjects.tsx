@@ -1,11 +1,7 @@
-import React from 'react'
 import ProjectList from './ProjectList'
 import { projects } from '@/data/projects'
 import { Space_Grotesk } from 'next/font/google'
 import { Button } from '../ui/button';
-import Link from 'next/link';
-import { ArrowRight } from 'lucide-react';
-
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
 
 const FeaturedProjects = () => {
@@ -23,9 +19,9 @@ const FeaturedProjects = () => {
 
                 <ProjectList projects={projects} filter={false} />
 
-                {/* <div className="flex justify-center mt-10">
-                    <Button variant="outline" size='medium' className="mx-auto mt-8">View More</Button>
-                </div> */}
+                <div className="flex justify-center mt-10">
+                    <Button variant="ghost" size="lg" className="p-6 md:p-8 rounded-xl font-bold text-lg cursor-pointer shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all">Explore All Projects</Button>                
+                </div>
 
             </div>
 

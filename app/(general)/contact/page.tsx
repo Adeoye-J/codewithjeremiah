@@ -1,6 +1,6 @@
 import ContactDetails from '@/components/contact/ContactDetails'
 import ContactForm from '@/components/contact/ContactForm'
-import Hero from '@/components/general/Hero'
+// import Hero from '@/components/general/Hero'
 import { Space_Grotesk } from 'next/font/google'
 
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });
@@ -8,12 +8,12 @@ const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", 
 const ContactPage = () => {
   return (
     <div className="min-h-screen">
-      <Hero 
+      {/* <Hero 
             title='Contact Me' 
             subtitle='Your requests and feedbacks are welcome!'
             action={[{"title": "About Me", "location": "/about"}, {"title": "My Blogs", "location": "/blogs"}]} 
             bgImage='hero-bg.jpg' 
-        />
+        /> */}
         <div className="py-12 md:py-20 bg-gray-100 dark:bg-black px-6 md:px-12 lg:px-20">
             <div className="max-w-7xl mx-auto text-center space-y-2 mb-12">
                 {/* <h3 className='font-semibold text-xs dark:text-white'>Blogs Snapshot</h3> */}

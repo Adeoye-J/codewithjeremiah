@@ -6,9 +6,7 @@ import {
 } from "next/font/google";
 import "../globals.css";
 import Footer from "@/components/general/Footer";
-import HeaderCondition from "@/components/general/HeaderCondition";
 import Header from "@/components/general/Header";
-import Hero from "@/components/general/Hero";
 
 // const geistSans = Geist({
 //   variable: "--font-geist-sans",

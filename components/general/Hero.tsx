@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import { Button } from '../ui/button';
 import { Inter, Space_Grotesk } from "next/font/google";
-import { Mail, Sparkle, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600"] });

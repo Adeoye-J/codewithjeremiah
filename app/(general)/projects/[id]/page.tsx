@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import { projects } from '@/data/projects'
-import Hero from '@/components/general/Hero'
+// import Hero from '@/components/general/Hero'
 import ProjectDetails from '@/components/projects/ProjectDetails'
 
 const ProjectDetailsPage = async ({params} : {params: Promise<{id: string}>}) => {
@@ -13,13 +13,13 @@ const ProjectDetailsPage = async ({params} : {params: Promise<{id: string}>}) =>
     
     return (
         <div className='min-h-screen'>
-            <Hero 
+            {/* <Hero 
                 title={projectItem?.title || "Project Details"} 
                 subtitle={projectItem?.description || "Details about this project"} 
                 bgImage={projectItem?.image || "hero-bg.jpg"} 
                 action={projectItem?.links || [{title: "", location: ""}, {title: "", location: ""}]}
                 target='_blank'
-            />
+            /> */}
             <ProjectDetails projectItem={projectItem} />
         </div>
     )
